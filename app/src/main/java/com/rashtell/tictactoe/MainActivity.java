@@ -519,14 +519,6 @@ public class MainActivity extends AppCompatActivity {
      * @return
      */
     private int artificialIntelligence() {
-        /*
-        The current session list will compare its pattern against the past winners patterns
-        The AI will select the best fit and the next move of that list will be selected
-        The move's availability will be checked on the present game
-        If the move is available, it will be played
-        And if not, AI goes back to instruction 5 while excluding the
-        */
-
         LinkedList choices = new LinkedList();
         //Machine thinking from past experience
         if (!isGameOver) {
@@ -567,7 +559,7 @@ public class MainActivity extends AppCompatActivity {
                     //The LinkedList is added at the index numOfMatches
                     if (choices.size() < numOfMatches)
                         for (int z = 0; z < numOfMatches; z++) {
-                        choices.add(new LinkedList<>());
+                            choices.add(new LinkedList<>());
                         }
                     else if (choices.size() >= numOfMatches) return naturalIntelligence();
                     //Adds the returnArrayList to the choices an index
@@ -592,7 +584,7 @@ public class MainActivity extends AppCompatActivity {
                 return naturalIntelligence();
             }
         }
-        return 0;
+        return naturalIntelligence();
     }
 
     private int naturalIntelligence() {
